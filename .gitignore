@@ -13,5 +13,6 @@ _auto2to3*
 /.coverage
 /htmlcov/
 /env/
+.idea
 # Used in demo apps
 secrets.cfg

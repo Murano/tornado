@@ -21,6 +21,7 @@ import tornado.ioloop
 import tornado.web
 import os.path
 import uuid
+import time
 
 from tornado import gen
 from tornado.options import define, options, parse_command_line
@@ -86,6 +87,7 @@ class MessageNewHandler(BaseHandler):
             "id": str(uuid.uuid4()),
             "from": self.current_user["first_name"],
             "body": self.get_argument("body"),
+            "time": time.strftime("%d %b %Y %H:%M:%S")
         }
         # to_basestring is necessary for Python 3's json encoder,
         # which doesn't accept byte strings.
